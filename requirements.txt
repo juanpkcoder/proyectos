@@ -5,3 +5,4 @@ pandastable
 statsmodels
 seaborn
 scikit-learn
+streamlit
