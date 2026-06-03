@@ -53,11 +53,11 @@ st.markdown("""
         font-size: 0.9rem;
     }
     </style>
-""", unsafe_style=True)
+""", unsafe_allow_html=True)
 
 # Títulos de la aplicación
-st.markdown("<div class='main-title'>🏠 MODELO DE ESTIMACIÓN DE VALORES COMERCIALES</div>", unsafe_style=True)
-st.markdown("<div class='subtitle'>Sistema de predicción inmobiliaria basado en Regresión Lineal Multivariada</div>", unsafe_style=True)
+st.markdown("<div class='main-title'>🏠 MODELO DE ESTIMACIÓN DE VALORES COMERCIALES</div>", unsafe_allow_html=True)
+st.markdown("<div class='subtitle'>Sistema de predicción inmobiliaria basado en Regresión Lineal Multivariada</div>", unsafe_allow_html=True)
 
 # Inicializar estado de sesión
 if 'df' not in st.session_state:
@@ -266,7 +266,7 @@ if not st.session_state.df.empty:
                         Intervalo de confianza del 95%: <b>[ ${ic_inf:,.2f}M — ${ic_sup:,.2f}M ]</b>
                     </p>
                 </div>
-            """, unsafe_style=True)
+            """, unsafe_allow_html=True)
             
             # Advertencia de extrapolación
             fuera_de_rango = []
@@ -282,7 +282,7 @@ if not st.session_state.df.empty:
                         ⚠️ <b>Atención:</b> Los valores ingresados para las variables <b>{', '.join(fuera_de_rango)}</b> están fuera del rango de datos con el que se entrenó el modelo. 
                         La predicción podría ser menos precisa o no lineal en estas regiones.
                     </div>
-                """, unsafe_style=True)
+                """, unsafe_allow_html=True)
             else:
                 st.info("✅ Todos los valores seleccionados se encuentran dentro del rango observado de datos de entrenamiento.")
 
